@@ -1,15 +1,12 @@
 import { Router } from "express";
-import { getPlayer, getPlayerById, postPlayer, deletePlayer, updatePlayer } from "../controllers/players-controller";
-import { getClubs } from "../controllers/clubs-controller";
+import { login, register } from '../controllers/auth-controller';
 
 const router = Router();
+const authRouter = Router();
 
-router.get("/players", getPlayer);
-router.get("/players/:id", getPlayerById);
-router.post("/players", postPlayer);
-router.patch("/players/:id", updatePlayer);
-router.delete("/players/:id", deletePlayer);
+authRouter.post("/register", register);
+authRouter.post("/login", login);
 
-router.get("/clubs", getClubs);
+router.use("/auth", authRouter)
 
 export default router;

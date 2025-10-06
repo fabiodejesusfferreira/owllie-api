@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dist": "tsup src",
-    "start:dev": "tsx --env-file=.env src/server.ts",
+    "start": "tsx --env-file=produc.env src/server.ts",
     "start:watch": "tsx watch --env-file=.env  src/server.ts",
     "start:dist": "npm run dist && node dist/src/index.js"
   },
@@ -13,16 +13,21 @@
   "author": "Fábio de Jesus",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.11.30",
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.0"
   }
 }

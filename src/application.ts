@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./routes/routes";
 import cors from "cors";
+import connectToDatabase from "./database/connection";
 
 function createApp() {
   const app = express();
@@ -8,9 +9,11 @@ function createApp() {
     origin: 'http://www.fabiodejesus.dev',
   }; */
 
+  connectToDatabase();
+
   app.use(express.json());
 
-  app.use("/api", router);
+  app.use(router);
 
   app.use(cors(/* corsOptions */));
 
