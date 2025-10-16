@@ -15,7 +15,7 @@ function createApp() {
 
   app.use(router);
 
-  app.use(cors(/* corsOptions */));
+  app.use(cors());
 
   return app;
 }
