@@ -11,11 +11,11 @@ function createApp() {
 
   connectToDatabase();
 
+  app.use(cors());
+
   app.use(express.json());
 
   app.use(router);
-
-  app.use(cors());
 
   return app;
 }
